@@ -1,36 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anbaltaz <anbaltaz@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 20:40:53 by anbaltaz          #+#    #+#             */
-/*   Updated: 2025/03/08 12:22:44 by anbaltaz         ###   ########.fr       */
+/*   Created: 2025/03/06 16:33:55 by anbaltaz          #+#    #+#             */
+/*   Updated: 2025/03/08 12:20:54 by anbaltaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <string.h>
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strcat(char *dest, char *src)
 {
-	unsigned int	i;
+	int	x;
+	int	k;
 
-	i = 0;
-	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
+	x = 0;
+	k = 0;
+	while (dest[x] != '\0' )
 	{
-		if (s1[i] != s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
-		i++;
+		x++;
 	}
-	return (0);
+	while (src[k] != '\0')
+	{
+		dest[x] = src[k];
+		x++;
+		k++;
+	}
+	dest[x] = '\0';
+	return (dest);
 }
+
+//#include <stdio.h>
 /*
 int main()
 {
-    printf(" %d\n", strcmp("Hello", "Hel"));
-    printf(" %d\n", ft_strncmp("Hello", "Hel", 3));
-    printf(" %d\n", ft_strncmp("Hello", "Hel", 5));
+    char dest[100] = "Hello, ";
+    char src[] = "world!";
+    printf("Antes de ft_strcat: %s\n", dest);
+    ft_strcat(dest, src);
+    printf("Depois de ft_strcat: %s\n", dest);
+
+    return 0;
 }*/
